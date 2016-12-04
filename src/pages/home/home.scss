@@ -1,8 +1,18 @@
 page-home {
-    .contenido{
-    background: #00bdd1;
+
+.registrarme{
+    margin-bottom: 20px;
 }
 
+.btnfacebook{
+    margin-bottom: 20px;
+}
+
+}
+
+.contenido{
+    background: #00bdd1;
+}
 
 img{
     margin-left: auto;
@@ -10,7 +20,6 @@ img{
     display: block;
     margin-bottom: 20px;
 }
-
 
 ion-item{
     margin-bottom:15px !important;
@@ -29,10 +38,5 @@ ion-list{
     margin-left: auto;
     margin-right: auto;
     display: block;
+    min-width: 120px;
 }
-
-.registrarme{
-    margin-bottom: 20px;
-}
-}
-
