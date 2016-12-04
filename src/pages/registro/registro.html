@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="negro">
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="contenido">
+
+
+  <img src="build/images/logo.png" alt="">
+
+
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Nombre" clearInput type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Email" clearInput type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Contraseña" clearInput type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Repite tu contraseña" clearInput type="password" [(ngModel)]="repassword"></ion-input>
+    </ion-item>
+
+
+
+
+<button ion-button class="enlace ingresar" (click)="registrar()">
+  Crear
+</button>
+
+
+  </ion-list>
+
+
+</ion-content>
