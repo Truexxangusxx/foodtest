@@ -7,6 +7,7 @@ import { Headers, RequestOptions } from '@angular/http';
 import { Http } from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import {PerfilPage} from '../perfil/perfil';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -19,8 +20,43 @@ export class HomePage {
   email = "";
   password = "";
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public http: Http, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public http: Http, public alertCtrl: AlertController,public storage: Storage) {
+
+     storage.get('token').then((val) => {
+       console.log('Your token is', val);
+     
+    let loading = this.loadingCtrl.create({ content: 'Pensando ...' });
+    loading.present(loading);
+
+
+    var link = 'http://localhost:8000/auth_token?token={'+val+'}';
+    var datos = JSON.stringify({ });
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    this.http.post(link, datos, { headers: headers })
+      .map(res => res.json())
+      .subscribe(data => {
+        this.contenido = data;
+        console.log(this.contenido);
+
+        loading.dismiss();
+
+        if (this.contenido['error']) {
+          
+        }
+        else{
+          this.navCtrl.push(PerfilPage);
+        }
+
+      });
     
+  })
+
+
+
+
+
   }
 
 
@@ -41,6 +77,7 @@ export class HomePage {
       .subscribe(data => {
         this.contenido = data;
         console.log(this.contenido);
+        this.storage.set('token', this.contenido['token']);
 
 
         loading.dismiss();
