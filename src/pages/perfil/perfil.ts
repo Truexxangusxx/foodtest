@@ -6,6 +6,7 @@ import { Headers, RequestOptions } from '@angular/http';
 import { Http } from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import {HomePage} from '../home/home';
+import {GustosPage} from '../gustos/gustos';
 
 /*
   Generated class for the Perfil page.
@@ -18,8 +19,8 @@ import {HomePage} from '../home/home';
   templateUrl: 'perfil.html'
 })
 export class PerfilPage {
-  user={};
-  contenido={};
+  user=[];
+  contenido=[];
 
   constructor(public navCtrl: NavController
   ,public storage: Storage
@@ -89,7 +90,7 @@ export class PerfilPage {
           alert.present();
         }
         else{
-          this.navCtrl.push(PerfilPage);
+          this.navCtrl.push(GustosPage);
         }
 
       });

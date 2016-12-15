@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="negro">
+    <ion-title>Mis Gustos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="contenido">
+
+  <p>Dinos cuales son tus preferencias para un experiencia mas personalizada</p>
+
+  <ion-list>
+
+    <ion-item ion-item *ngFor="let gusto of gustos" (click)="itemSelected(gusto)">
+      <ion-label>{{ gusto.nombre }}</ion-label>
+      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+
+
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="verde">
+    <button ion-button class="enlace ingresar" (click)="guardar()">
+  Guardar
+</button>
+  </ion-toolbar>
+</ion-footer>
