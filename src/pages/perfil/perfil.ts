@@ -19,8 +19,8 @@ import {GustosPage} from '../gustos/gustos';
   templateUrl: 'perfil.html'
 })
 export class PerfilPage {
-  user=[];
-  contenido=[];
+  user={};
+  contenido={};
 
   constructor(public navCtrl: NavController
   ,public storage: Storage
