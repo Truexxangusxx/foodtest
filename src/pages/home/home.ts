@@ -29,7 +29,7 @@ export class HomePage {
     loading.present(loading);
 
 
-    var link = 'http://localhost:8000/auth_token?token={'+val+'}';
+    var link = 'http://192.168.0.11:8000/auth_token?token={'+val+'}';
     var datos = JSON.stringify({ });
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -66,7 +66,7 @@ export class HomePage {
     loading.present(loading);
 
 
-    var link = 'http://localhost:8000/auth_login';
+    var link = 'http://192.168.0.11:8000/auth_login';
     var datos = JSON.stringify({ email: this.email, password: this.password });
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');

@@ -19,7 +19,7 @@ import {GustosPage} from '../gustos/gustos';
   templateUrl: 'perfil.html'
 })
 export class PerfilPage {
-  user={};
+  user={tipo:''};
   contenido={};
 
   constructor(public navCtrl: NavController
@@ -34,7 +34,7 @@ export class PerfilPage {
       let loading = this.loadingCtrl.create({ content: 'Pensando ...' });
       loading.present(loading);
 
-      var link = 'http://localhost:8000/auth_token?token={'+val+'}';
+      var link = 'http://192.168.0.11:8000/auth_token?token={'+val+'}';
       var datos = JSON.stringify({ });
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
@@ -68,7 +68,7 @@ export class PerfilPage {
     let loading = this.loadingCtrl.create({ content: 'Pensando ...' });
     loading.present(loading);
 
-    var link = 'http://localhost:8000/ActualizarTipoUsuario';
+    var link = 'http://192.168.0.11:8000/ActualizarTipoUsuario';
     var datos = JSON.stringify({user_id:this.user['id'], tipo:this.user['tipo'] });
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');

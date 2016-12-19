@@ -15,7 +15,7 @@
 
     <ion-item ion-item *ngFor="let gusto of gustos" (click)="itemSelected(gusto)">
       <ion-label>{{ gusto.nombre }}</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="gusto.ok" color="dark" checked="false"></ion-checkbox>
     </ion-item>
 
   </ion-list>
