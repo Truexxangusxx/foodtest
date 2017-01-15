@@ -6,6 +6,7 @@ import { RegistroPage } from '../pages/registro/registro';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { GustosPage } from '../pages/gustos/gustos';
 import { MapaPage } from '../pages/mapa/mapa';
+import { MapaproveedorPage } from '../pages/mapaproveedor/mapaproveedor';
 import { UserService } from '../providers/user-service';
 import { Storage } from '@ionic/storage';
 
@@ -17,6 +18,7 @@ import { Storage } from '@ionic/storage';
     PerfilPage,
     GustosPage,
     MapaPage,
+    MapaproveedorPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,6 +31,7 @@ import { Storage } from '@ionic/storage';
     PerfilPage,
     GustosPage,
     MapaPage,
+    MapaproveedorPage,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, UserService, Storage]
 })
